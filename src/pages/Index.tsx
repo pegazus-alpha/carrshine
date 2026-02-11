@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Clock, Sparkles, Users, Star, CheckCircle, Factory, Home, HardHat, Building2, Droplets, Trash2 } from "lucide-react";
 import heroImage from "@/assets/hero-cleaning.jpg";
 import caarTeam from "@/assets/caar-team.jpg";
+import FadeIn from "@/components/FadeIn";
 
 const services = [
   { icon: Factory, title: "Nettoyage Industriel", desc: "Industries agroalimentaires, pharmaceutiques, pétrolières et transport maritime." },
@@ -53,98 +54,114 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 via-secondary/70 to-secondary/40" />
         </div>
         <div className="container-caar relative z-10 py-20">
-          <div className="max-w-2xl">
-            <span className="inline-block bg-primary/90 text-primary-foreground text-xs font-heading font-bold px-3 py-1 rounded-full mb-6">
-              🎉 -20% sur votre première intervention
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-secondary-foreground leading-tight mb-6">
-              Redonner Vie à Vos <span className="text-primary">Infrastructures</span>
-            </h1>
-            <p className="text-lg text-secondary-foreground/80 mb-8 leading-relaxed max-w-xl">
-              CAAR — La Propreté Professionnelle à Votre Service. Industries, façades, chantiers : nous rendons chaque espace impeccable au Cameroun.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="btn-primary text-base">
-                Demander un devis gratuit <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link to="/services" className="btn-outline border-secondary-foreground/50 text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary text-base">
-                Nos Services
-              </Link>
+          <FadeIn>
+            <div className="max-w-2xl">
+              <span className="inline-block bg-primary/90 text-primary-foreground text-xs font-heading font-bold px-3 py-1 rounded-full mb-6">
+                🎉 -20% sur votre première intervention
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-secondary-foreground leading-tight mb-6">
+                Redonner Vie à Vos <span className="text-primary">Infrastructures</span>
+              </h1>
+              <p className="text-lg text-secondary-foreground/80 mb-8 leading-relaxed max-w-xl">
+                CAAR — La Propreté Professionnelle à Votre Service. Industries, façades, chantiers : nous rendons chaque espace impeccable au Cameroun.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/contact" className="btn-primary text-base">
+                  Demander un devis gratuit <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link to="/services" className="btn-outline border-secondary-foreground/50 text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary text-base">
+                  Nos Services
+                </Link>
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="bg-primary/90 py-6">
-        <div className="container-caar grid grid-cols-3 gap-6 text-center">
-          {stats.map((s) => (
-            <div key={s.label}>
-              <p className="text-2xl md:text-3xl font-heading font-extrabold text-primary-foreground">{s.value}</p>
-              <p className="text-sm text-primary-foreground/80 font-medium">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <FadeIn>
+        <section className="bg-primary/90 py-6">
+          <div className="container-caar grid grid-cols-3 gap-6 text-center">
+            {stats.map((s) => (
+              <div key={s.label}>
+                <p className="text-2xl md:text-3xl font-heading font-extrabold text-primary-foreground">{s.value}</p>
+                <p className="text-sm text-primary-foreground/80 font-medium">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </FadeIn>
 
       {/* Services */}
       <section className="section-padding bg-background">
         <div className="container-caar">
-          <div className="text-center mb-12">
-            <h2 className="section-title mb-3">Nos Services</h2>
-            <p className="section-subtitle mx-auto">Des solutions de nettoyage adaptées à tous vos besoins, avec une qualité irréprochable.</p>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-12">
+              <h2 className="section-title mb-3">Nos Services</h2>
+              <p className="section-subtitle mx-auto">Des solutions de nettoyage adaptées à tous vos besoins, avec une qualité irréprochable.</p>
+            </div>
+          </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <div key={s.title} className="card-service group">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <s.icon className="w-6 h-6 text-primary" />
+            {services.map((s, i) => (
+              <FadeIn key={s.title} delay={i * 0.08}>
+                <div className="card-service group h-full">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <s.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-heading font-bold text-lg mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
-                <h3 className="font-heading font-bold text-lg mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
+              </FadeIn>
             ))}
           </div>
-          <div className="text-center mt-10">
-            <Link to="/services" className="btn-primary">
-              Tous nos services <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <FadeIn>
+            <div className="text-center mt-10">
+              <Link to="/services" className="btn-primary">
+                Tous nos services <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Why choose us */}
       <section className="section-padding bg-muted">
         <div className="container-caar">
-          <div className="text-center mb-12">
-            <h2 className="section-title mb-3">Pourquoi Choisir CAAR ?</h2>
-            <p className="section-subtitle mx-auto">Votre satisfaction est notre priorité absolue.</p>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-12">
+              <h2 className="section-title mb-3">Pourquoi Choisir CAAR ?</h2>
+              <p className="section-subtitle mx-auto">Votre satisfaction est notre priorité absolue.</p>
+            </div>
+          </FadeIn>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {strengths.map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <s.icon className="w-7 h-7 text-primary" />
+            {strengths.map((s, i) => (
+              <FadeIn key={s.label} delay={i * 0.1}>
+                <div className="text-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <s.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <p className="font-heading font-semibold text-sm">{s.label}</p>
                 </div>
-                <p className="font-heading font-semibold text-sm">{s.label}</p>
-              </div>
+              </FadeIn>
             ))}
           </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            {[
-              "Devis gratuit sous 24h après inspection",
-              "Produits écologiques certifiés",
-              "Équipe formée et équipée",
-              "Tarifs transparents",
-              "Satisfaction garantie",
-              "Intervention rapide",
-            ].map((b) => (
-              <div key={b} className="flex items-center gap-2 text-sm">
-                <CheckCircle className="w-5 h-5 text-primary shrink-0" />
-                <span>{b}</span>
-              </div>
-            ))}
-          </div>
+          <FadeIn>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+              {[
+                "Devis gratuit sous 24h après inspection",
+                "Produits écologiques certifiés",
+                "Équipe formée et équipée",
+                "Tarifs transparents",
+                "Satisfaction garantie",
+                "Intervention rapide",
+              ].map((b) => (
+                <div key={b} className="flex items-center gap-2 text-sm">
+                  <CheckCircle className="w-5 h-5 text-primary shrink-0" />
+                  <span>{b}</span>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -152,18 +169,20 @@ const Index = () => {
       <section className="section-padding bg-background">
         <div className="container-caar">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div>
+            <FadeIn>
               <img src={caarTeam} alt="Équipe CAAR" className="rounded-xl shadow-lg w-full object-cover aspect-[4/3]" loading="lazy" />
-            </div>
-            <div>
-              <h2 className="section-title mb-4">Une Équipe Dévouée</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Nos agents formés et équipés interviennent avec professionnalisme et discrétion. Chaque membre de l'équipe CAAR partage la même vision : faire du Cameroun un pays propre.
-              </p>
-              <Link to="/a-propos" className="btn-outline text-sm">
-                En savoir plus <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+            </FadeIn>
+            <FadeIn delay={0.15}>
+              <div>
+                <h2 className="section-title mb-4">Une Équipe Dévouée</h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Nos agents formés et équipés interviennent avec professionnalisme et discrétion. Chaque membre de l'équipe CAAR partage la même vision : faire du Cameroun un pays propre.
+                </p>
+                <Link to="/a-propos" className="btn-outline text-sm">
+                  En savoir plus <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -171,40 +190,46 @@ const Index = () => {
       {/* Testimonials */}
       <section className="section-padding bg-muted">
         <div className="container-caar">
-          <div className="text-center mb-12">
-            <h2 className="section-title mb-3">Ce Que Disent Nos Clients</h2>
-          </div>
+          <FadeIn>
+            <div className="text-center mb-12">
+              <h2 className="section-title mb-3">Ce Que Disent Nos Clients</h2>
+            </div>
+          </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div key={t.name} className="card-service">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                  ))}
+            {testimonials.map((t, i) => (
+              <FadeIn key={t.name} delay={i * 0.1}>
+                <div className="card-service h-full">
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-muted-foreground italic mb-4">"{t.text}"</p>
+                  <p className="font-heading font-semibold text-sm">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
                 </div>
-                <p className="text-sm text-muted-foreground italic mb-4">"{t.text}"</p>
-                <p className="font-heading font-semibold text-sm">{t.name}</p>
-                <p className="text-xs text-muted-foreground">{t.role}</p>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-secondary text-secondary-foreground text-center">
-        <div className="container-caar">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-            Votre Espace Mérite le <span className="text-primary">Meilleur Nettoyage</span>
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Obtenez une estimation gratuite sous 24h après inspection et bénéficiez de -20% sur votre première intervention.
-          </p>
-          <Link to="/contact" className="btn-primary text-lg">
-            Obtenir mon devis gratuit <ArrowRight className="w-5 h-5" />
-          </Link>
-        </div>
-      </section>
+      <FadeIn>
+        <section className="section-padding bg-secondary text-secondary-foreground text-center">
+          <div className="container-caar">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+              Votre Espace Mérite le <span className="text-primary">Meilleur Nettoyage</span>
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+              Obtenez une estimation gratuite sous 24h après inspection et bénéficiez de -20% sur votre première intervention.
+            </p>
+            <Link to="/contact" className="btn-primary text-lg">
+              Obtenir mon devis gratuit <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </section>
+      </FadeIn>
     </>
   );
 };

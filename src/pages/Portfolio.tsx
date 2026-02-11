@@ -13,6 +13,7 @@ import serviceHygiene from "@/assets/service-hygiene.jpg";
 import serviceDesinfection from "@/assets/service-desinfection.jpg";
 import serviceRenovation from "@/assets/service-renovation.jpg";
 import serviceResidential from "@/assets/service-residential.jpg";
+import FadeIn from "@/components/FadeIn";
 
 const categories = ["Tous", "Industriel", "Façades", "Après Chantier", "Hygiène"];
 
@@ -48,10 +49,12 @@ const Portfolio = () => {
       {/* Hero */}
       <section className="bg-secondary text-secondary-foreground section-padding pt-28 md:pt-32">
         <div className="container-caar text-center">
-          <h1 className="section-title text-secondary-foreground mb-4">Nos Réalisations</h1>
-          <p className="section-subtitle mx-auto text-muted-foreground">
-            Découvrez nos interventions. Chaque espace traité avec le plus grand soin.
-          </p>
+          <FadeIn>
+            <h1 className="section-title text-secondary-foreground mb-4">Nos Réalisations</h1>
+            <p className="section-subtitle mx-auto text-muted-foreground">
+              Découvrez nos interventions. Chaque espace traité avec le plus grand soin.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -59,45 +62,49 @@ const Portfolio = () => {
       <section className="section-padding bg-background">
         <div className="container-caar">
           {/* Filters */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {categories.map((c) => (
-              <button
-                key={c}
-                onClick={() => setFilter(c)}
-                className={`px-4 py-2 rounded-full text-sm font-heading font-medium transition-colors ${
-                  filter === c
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-primary/10"
-                }`}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
+          <FadeIn>
+            <div className="flex flex-wrap justify-center gap-2 mb-10">
+              {categories.map((c) => (
+                <button
+                  key={c}
+                  onClick={() => setFilter(c)}
+                  className={`px-4 py-2 rounded-full text-sm font-heading font-medium transition-colors ${
+                    filter === c
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-muted text-muted-foreground hover:bg-primary/10"
+                  }`}
+                >
+                  {c}
+                </button>
+              ))}
+            </div>
+          </FadeIn>
 
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {filtered.map((p) => {
+            {filtered.map((p, i) => {
               const Icon = catIcons[p.cat] || Droplets;
               return (
-                <div key={p.id} className="card-service group cursor-pointer overflow-hidden p-0">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-center gap-2 mb-1">
-                      <Icon className="w-3.5 h-3.5 text-primary" />
-                      <span className="text-xs font-heading font-medium text-primary">{p.cat}</span>
+                <FadeIn key={p.id} delay={i * 0.05}>
+                  <div className="card-service group cursor-pointer overflow-hidden p-0 h-full">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
                     </div>
-                    <h3 className="font-heading font-bold text-sm mt-1">{p.title}</h3>
-                    <p className="text-xs text-muted-foreground mt-1">{p.desc}</p>
+                    <div className="p-4">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Icon className="w-3.5 h-3.5 text-primary" />
+                        <span className="text-xs font-heading font-medium text-primary">{p.cat}</span>
+                      </div>
+                      <h3 className="font-heading font-bold text-sm mt-1">{p.title}</h3>
+                      <p className="text-xs text-muted-foreground mt-1">{p.desc}</p>
+                    </div>
                   </div>
-                </div>
+                </FadeIn>
               );
             })}
           </div>
@@ -105,16 +112,18 @@ const Portfolio = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-secondary text-secondary-foreground text-center">
-        <div className="container-caar">
-          <h2 className="text-3xl font-heading font-bold mb-4">
-            Votre espace sera le prochain à <span className="text-primary">briller</span>
-          </h2>
-          <Link to="/contact" className="btn-primary mt-4">
-            Demander un devis <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </section>
+      <FadeIn>
+        <section className="section-padding bg-secondary text-secondary-foreground text-center">
+          <div className="container-caar">
+            <h2 className="text-3xl font-heading font-bold mb-4">
+              Votre espace sera le prochain à <span className="text-primary">briller</span>
+            </h2>
+            <Link to="/contact" className="btn-primary mt-4">
+              Demander un devis <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </section>
+      </FadeIn>
     </>
   );
 };
