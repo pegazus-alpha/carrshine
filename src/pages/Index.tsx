@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Clock, Sparkles, Users, Star, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, Clock, Sparkles, Users, Star, CheckCircle, Factory, Home, HardHat, Building2, Droplets, Trash2 } from "lucide-react";
 import heroImage from "@/assets/hero-cleaning.jpg";
+import caarTeam from "@/assets/caar-team.jpg";
 
 const services = [
-  { icon: "🏢", title: "Bureaux & Commerces", desc: "Entretien quotidien, hebdomadaire ou mensuel de vos locaux professionnels." },
-  { icon: "🏠", title: "Nettoyage Résidentiel", desc: "Maisons, appartements et villas impeccables à chaque passage." },
-  { icon: "🔨", title: "Après Travaux", desc: "Remise en état complète après construction ou rénovation." },
-  { icon: "🏭", title: "Nettoyage Industriel", desc: "Entrepôts, usines et grandes surfaces avec matériel adapté." },
-  { icon: "🪟", title: "Vitres & Façades", desc: "Des surfaces vitrées qui brillent, en toute sécurité." },
-  { icon: "🦠", title: "Désinfection", desc: "Assainissement complet conforme aux normes d'hygiène." },
+  { icon: Factory, title: "Nettoyage Industriel", desc: "Industries agroalimentaires, pharmaceutiques, pétrolières et transport maritime." },
+  { icon: HardHat, title: "Nettoyage Après Chantier", desc: "Remise en état complète après construction ou rénovation." },
+  { icon: Building2, title: "Nettoyage Façades", desc: "Techniciens cordistes certifiés pour vos façades et infrastructures." },
+  { icon: Trash2, title: "Hygiène & Salubrité", desc: "Gestion des déchets ménagers et industriels pour un environnement sain." },
+  { icon: Home, title: "Rénovation & Expertise", desc: "Contre-expertise lors de la construction d'infrastructures publiques et privées." },
+  { icon: Droplets, title: "Désinfection", desc: "Assainissement complet conforme aux normes d'hygiène les plus strictes." },
 ];
 
 const strengths = [
@@ -37,9 +38,8 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: "100+", label: "Clients satisfaits" },
   { value: "7j/7", label: "Disponibilité" },
-  { value: "<2h", label: "Temps de réponse" },
+  { value: "<24h", label: "Temps de réponse" },
   { value: "100%", label: "Satisfaction" },
 ];
 
@@ -50,24 +50,24 @@ const Index = () => {
       <section className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Nettoyage professionnel CAAR" className="w-full h-full object-cover" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-r from-caar-dark/90 via-caar-dark/70 to-caar-dark/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 via-secondary/70 to-secondary/40" />
         </div>
         <div className="container-caar relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block bg-primary text-primary-foreground text-xs font-heading font-bold px-3 py-1 rounded-full mb-6">
+            <span className="inline-block bg-primary/90 text-primary-foreground text-xs font-heading font-bold px-3 py-1 rounded-full mb-6">
               🎉 -20% sur votre première intervention
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-secondary-foreground leading-tight mb-6">
-              Quand la Propreté Devient un <span className="text-primary">Art</span>
+              Redonner Vie à Vos <span className="text-primary">Infrastructures</span>
             </h1>
             <p className="text-lg text-secondary-foreground/80 mb-8 leading-relaxed max-w-xl">
-              CAAR — La Propreté Professionnelle à Votre Service. Bureaux, résidences, chantiers : nous rendons chaque espace impeccable au Cameroun.
+              CAAR — La Propreté Professionnelle à Votre Service. Industries, façades, chantiers : nous rendons chaque espace impeccable au Cameroun.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact" className="btn-primary text-base">
                 Demander un devis gratuit <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link to="/services" className="btn-outline border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary text-base">
+              <Link to="/services" className="btn-outline border-secondary-foreground/50 text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary text-base">
                 Nos Services
               </Link>
             </div>
@@ -76,8 +76,8 @@ const Index = () => {
       </section>
 
       {/* Stats */}
-      <section className="bg-primary py-6">
-        <div className="container-caar grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <section className="bg-primary/90 py-6">
+        <div className="container-caar grid grid-cols-3 gap-6 text-center">
           {stats.map((s) => (
             <div key={s.label}>
               <p className="text-2xl md:text-3xl font-heading font-extrabold text-primary-foreground">{s.value}</p>
@@ -97,7 +97,9 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s) => (
               <div key={s.title} className="card-service group">
-                <span className="text-4xl mb-4 block">{s.icon}</span>
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <s.icon className="w-6 h-6 text-primary" />
+                </div>
                 <h3 className="font-heading font-bold text-lg mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
@@ -130,7 +132,7 @@ const Index = () => {
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {[
-              "Devis gratuit sous 2h",
+              "Devis gratuit sous 24h après inspection",
               "Produits écologiques certifiés",
               "Équipe formée et équipée",
               "Tarifs transparents",
@@ -146,8 +148,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Team photo */}
       <section className="section-padding bg-background">
+        <div className="container-caar">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+              <img src={caarTeam} alt="Équipe CAAR" className="rounded-xl shadow-lg w-full object-cover aspect-[4/3]" loading="lazy" />
+            </div>
+            <div>
+              <h2 className="section-title mb-4">Une Équipe Dévouée</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Nos agents formés et équipés interviennent avec professionnalisme et discrétion. Chaque membre de l'équipe CAAR partage la même vision : faire du Cameroun un pays propre.
+              </p>
+              <Link to="/a-propos" className="btn-outline text-sm">
+                En savoir plus <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="section-padding bg-muted">
         <div className="container-caar">
           <div className="text-center mb-12">
             <h2 className="section-title mb-3">Ce Que Disent Nos Clients</h2>
@@ -176,7 +198,7 @@ const Index = () => {
             Votre Espace Mérite le <span className="text-primary">Meilleur Nettoyage</span>
           </h2>
           <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Obtenez une estimation gratuite en 2 minutes et bénéficiez de -20% sur votre première intervention.
+            Obtenez une estimation gratuite sous 24h après inspection et bénéficiez de -20% sur votre première intervention.
           </p>
           <Link to="/contact" className="btn-primary text-lg">
             Obtenir mon devis gratuit <ArrowRight className="w-5 h-5" />

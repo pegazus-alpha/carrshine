@@ -1,66 +1,78 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Factory, HardHat, Building2, Trash2, Home, Droplets } from "lucide-react";
+import serviceIndustrial from "@/assets/service-industrial.jpg";
+import serviceChantier from "@/assets/service-chantier.jpg";
+import caarFacade from "@/assets/caar-facade.jpg";
+import serviceHygiene from "@/assets/service-hygiene.jpg";
+import serviceRenovation from "@/assets/service-renovation.jpg";
+import serviceDesinfection from "@/assets/service-desinfection.jpg";
 
 const servicesData = [
   {
-    id: "bureaux",
-    icon: "🏢",
-    title: "Nettoyage Bureaux & Locaux Professionnels",
-    desc: "Entretien quotidien, hebdomadaire ou mensuel de vos espaces de travail pour un environnement sain et productif.",
-    details: ["Sols, surfaces et mobilier", "Sanitaires et espaces communs", "Cuisine et salle de pause", "Poubelles et recyclage"],
-    clients: "PME, grandes entreprises, cabinets",
-    cta: "Demander un devis bureau",
-    whatsapp: "Bonjour, j'aimerais un devis pour le nettoyage de bureaux/locaux professionnels.",
+    id: "industriel",
+    icon: Factory,
+    title: "Nettoyage Industriel",
+    desc: "Industries agroalimentaires, pharmaceutiques, pétrolières et transport maritime. Nous disposons du matériel professionnel adapté aux environnements industriels exigeants.",
+    details: ["Industries agroalimentaires et pharmaceutiques", "Industrie pétrolière", "Transport maritime et eaux usées", "Dégraissage et nettoyage en profondeur"],
+    clients: "Industries, usines, entrepôts",
+    cta: "Devis nettoyage industriel",
+    whatsapp: "Bonjour, je cherche un prestataire pour le nettoyage industriel.",
+    image: serviceIndustrial,
   },
   {
-    id: "residentiel",
-    icon: "🏠",
-    title: "Nettoyage Résidentiel",
-    desc: "Maisons, appartements et villas impeccables. Profitez de votre chez-vous sans vous soucier du ménage.",
-    details: ["Nettoyage complet toutes pièces", "Cuisine et salle de bain en profondeur", "Vitres intérieures", "Repassage en option"],
-    clients: "Particuliers, expatriés, propriétaires",
-    cta: "Réserver mon nettoyage",
-    whatsapp: "Bonjour, je souhaite faire nettoyer ma maison/appartement.",
-  },
-  {
-    id: "apres-travaux",
-    icon: "🔨",
-    title: "Nettoyage Après Travaux",
+    id: "apres-chantier",
+    icon: HardHat,
+    title: "Nettoyage Après Chantier",
     desc: "Remise en état complète après construction ou rénovation. Votre espace neuf mérite une finition impeccable.",
     details: ["Enlèvement poussière et débris", "Nettoyage sols et surfaces", "Vitres et menuiseries", "Finitions soignées"],
     clients: "Constructeurs, rénovateurs, particuliers",
     cta: "Nettoyer après mes travaux",
     whatsapp: "Bonjour, j'ai besoin d'un nettoyage après travaux de rénovation.",
+    image: serviceChantier,
   },
   {
-    id: "industriel",
-    icon: "🏭",
-    title: "Nettoyage Industriel",
-    desc: "Entrepôts, usines et grandes surfaces. Nous disposons du matériel professionnel adapté aux grandes surfaces.",
-    details: ["Nettoyage en profondeur", "Dégraissage industriel", "Sols techniques", "Zones de production"],
-    clients: "Industries, entrepôts, grandes surfaces",
-    cta: "Devis nettoyage industriel",
-    whatsapp: "Bonjour, je cherche un prestataire pour le nettoyage industriel.",
+    id: "facades",
+    icon: Building2,
+    title: "Nettoyage des Façades",
+    desc: "Techniciens cordistes certifiés (rope access) pour le nettoyage de vos façades, vitrages et infrastructures en hauteur.",
+    details: ["Techniciens cordistes certifiés", "Façades d'immeubles et bâtiments", "Baies vitrées et verrières", "Équipement sécurisé en hauteur"],
+    clients: "Immeubles, commerces, bureaux",
+    cta: "Des façades impeccables",
+    whatsapp: "Bonjour, je voudrais un devis pour le nettoyage de façades.",
+    image: caarFacade,
   },
   {
-    id: "vitres",
-    icon: "🪟",
-    title: "Nettoyage Vitres & Façades",
-    desc: "Des surfaces vitrées cristallines pour une image professionnelle irréprochable.",
-    details: ["Vitres intérieures et extérieures", "Baies vitrées et verrières", "Façades extérieures", "Équipement sécurisé"],
-    clients: "Commerces, bureaux, résidences",
-    cta: "Des vitres impeccables",
-    whatsapp: "Bonjour, je voudrais un devis pour le nettoyage de vitres.",
+    id: "hygiene",
+    icon: Trash2,
+    title: "Hygiène & Salubrité",
+    desc: "Gestion des déchets ménagers et industriels. Déploiement d'agents pour le ramassage régulier afin d'assurer un environnement sain.",
+    details: ["Ramassage des déchets ménagers", "Gestion des déchets industriels", "Dépôt de poubelles et collecte 2x/semaine", "Lutte contre l'accumulation des déchets"],
+    clients: "Quartiers, communes, entreprises",
+    cta: "Gérer mes déchets",
+    whatsapp: "Bonjour, j'aimerais des informations sur vos services d'hygiène et salubrité.",
+    image: serviceHygiene,
+  },
+  {
+    id: "renovation",
+    icon: Home,
+    title: "Rénovation & Contre-Expertise",
+    desc: "Service de rénovation et contre-expertise lors de la construction d'infrastructures publiques et privées.",
+    details: ["Contre-expertise de construction", "Rénovation de bâtiments", "Déménagement et aménagement", "Inspection et rapport détaillé"],
+    clients: "Promoteurs, institutions, particuliers",
+    cta: "Demander une expertise",
+    whatsapp: "Bonjour, j'ai besoin d'un service de rénovation et contre-expertise.",
+    image: serviceRenovation,
   },
   {
     id: "desinfection",
-    icon: "🦠",
+    icon: Droplets,
     title: "Désinfection & Assainissement",
     desc: "Désinfection complète de vos locaux avec des produits certifiés, conformes aux normes d'hygiène les plus strictes.",
-    details: ["Désinfection surfaces", "Traitement de l'air", "Produits certifiés", "Protocole COVID-19"],
+    details: ["Désinfection surfaces", "Traitement de l'air", "Produits certifiés", "Protocole sanitaire"],
     clients: "Bureaux, commerces, écoles, hôpitaux",
     cta: "Désinfecter mes locaux",
     whatsapp: "Bonjour, j'ai besoin d'une désinfection complète de mes locaux.",
+    image: serviceDesinfection,
   },
 ];
 
@@ -70,9 +82,9 @@ const Services = () => {
       {/* Hero */}
       <section className="bg-secondary text-secondary-foreground section-padding pt-28 md:pt-32">
         <div className="container-caar text-center">
-          <h1 className="section-title text-secondary-foreground mb-4">Nos Services de Nettoyage</h1>
+          <h1 className="section-title text-secondary-foreground mb-4">Nos Services</h1>
           <p className="section-subtitle mx-auto text-muted-foreground">
-            Des solutions complètes pour tous vos besoins en propreté. Qualité professionnelle garantie.
+            Des solutions complètes pour tous vos besoins en propreté et maintenance. Qualité professionnelle garantie.
           </p>
         </div>
       </section>
@@ -86,7 +98,9 @@ const Services = () => {
               className={`flex flex-col ${i % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 items-center`}
             >
               <div className="flex-1">
-                <span className="text-5xl mb-4 block">{s.icon}</span>
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <s.icon className="w-6 h-6 text-primary" />
+                </div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">{s.title}</h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">{s.desc}</p>
                 <ul className="space-y-2 mb-6">
@@ -113,9 +127,12 @@ const Services = () => {
                 </div>
               </div>
               <div className="flex-1 w-full">
-                <div className="bg-muted rounded-xl aspect-[4/3] flex items-center justify-center">
-                  <span className="text-8xl">{s.icon}</span>
-                </div>
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  className="rounded-xl w-full object-cover aspect-[4/3] shadow-md"
+                  loading="lazy"
+                />
               </div>
             </div>
           ))}
@@ -123,13 +140,13 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-primary text-primary-foreground text-center">
+      <section className="section-padding bg-primary/90 text-primary-foreground text-center">
         <div className="container-caar">
           <h2 className="text-3xl font-heading font-bold mb-4">Un Besoin Spécifique ?</h2>
           <p className="mb-8 max-w-lg mx-auto opacity-90">
             Contactez-nous pour un devis personnalisé adapté à votre situation.
           </p>
-          <Link to="/contact" className="btn-secondary">
+          <Link to="/contact" className="bg-secondary text-secondary-foreground font-heading font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:opacity-90 inline-flex items-center gap-2">
             Demander un Devis <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

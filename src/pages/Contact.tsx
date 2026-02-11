@@ -3,11 +3,11 @@ import { Phone, MapPin, Clock, Facebook, ArrowRight, ArrowLeft, CheckCircle } fr
 import { toast } from "sonner";
 
 const serviceOptions = [
-  "Nettoyage bureaux/locaux professionnels",
-  "Nettoyage résidentiel (maison/appartement)",
-  "Nettoyage après travaux",
   "Nettoyage industriel",
-  "Nettoyage vitres et façades",
+  "Nettoyage après chantier",
+  "Nettoyage des façades (cordiste)",
+  "Hygiène et salubrité / Gestion des déchets",
+  "Rénovation et contre-expertise",
   "Désinfection et assainissement",
   "Autre",
 ];
@@ -79,7 +79,7 @@ const Contact = () => {
     }
 
     setSubmitted(true);
-    toast.success("Devis en préparation ! Vous serez contacté dans les 2 heures ouvrées.");
+    toast.success("Devis en préparation ! Vous serez contacté dans les 24 heures après inspection.");
   };
 
   if (submitted) {
@@ -97,7 +97,7 @@ const Contact = () => {
             </div>
             <h2 className="text-2xl font-heading font-bold mb-4">Demande envoyée avec succès !</h2>
             <p className="text-muted-foreground mb-6">
-              ✅ Devis en préparation ! Vous serez contacté dans les 2 heures ouvrées. Merci de faire confiance à CAAR.
+              ✅ Devis en préparation ! Vous serez contacté dans les 24 heures après inspection. Merci de faire confiance à CAAR.
             </p>
             {form.urgency === "Urgent (dans les 24-48h)" && (
               <p className="text-sm text-primary font-semibold mb-4">
@@ -125,7 +125,7 @@ const Contact = () => {
         <div className="container-caar text-center">
           <h1 className="section-title text-secondary-foreground mb-4">Demander un Devis</h1>
           <p className="section-subtitle mx-auto text-muted-foreground">
-            Réponse sous 2h en journée. Devis gratuit et sans engagement.
+            Réponse sous 24h après inspection. Devis gratuit et sans engagement.
           </p>
         </div>
       </section>
@@ -420,7 +420,7 @@ const Contact = () => {
                 <h3 className="font-heading font-bold mb-3 text-sm">Garanties CAAR</h3>
                 <ul className="space-y-2">
                   {[
-                    "Devis gratuit sous 2h",
+                    "Devis gratuit sous 24h",
                     "Produits écologiques",
                     "Équipe formée",
                     "Tarifs transparents",
