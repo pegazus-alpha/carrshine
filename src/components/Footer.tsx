@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <img src={logoCaar} alt="CAAR" className="h-10 mb-4 invert" />
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              CAAR, votre expert en nettoyage professionnel au Cameroun. Propreté garantie, satisfaction assurée.
+              CAAR, votre expert en nettoyage et maintenance au Cameroun. Redonner vie à vos infrastructures.
             </p>
             <div className="flex gap-3">
               <a
@@ -37,10 +37,11 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-sm mb-4 text-primary">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Bureaux</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Résidentiel</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Après Travaux</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">Vitres & Façades</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Industriel</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Après Chantier</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Façades</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Hygiène & Salubrité</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Rénovation & Expertise</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors">Désinfection</Link></li>
             </ul>
           </div>
@@ -66,7 +67,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
-                Cameroun (Douala, Yaoundé)
+                Cameroun (Douala, Kribi, Yaoundé)
               </li>
               <li className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-primary" />

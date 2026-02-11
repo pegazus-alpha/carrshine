@@ -1,29 +1,41 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Factory, HardHat, Building2, Trash2, Droplets } from "lucide-react";
+import caarFacade from "@/assets/caar-facade.jpg";
+import caarCleaning from "@/assets/caar-cleaning.jpg";
+import caarTeam from "@/assets/caar-team.jpg";
+import caarVitres from "@/assets/caar-vitres.jpg";
+import caarEnvironment from "@/assets/caar-environment.jpg";
+import caarTeam2 from "@/assets/caar-team2.jpg";
+import serviceIndustrial from "@/assets/service-industrial.jpg";
+import serviceChantier from "@/assets/service-chantier.jpg";
+import serviceHygiene from "@/assets/service-hygiene.jpg";
+import serviceDesinfection from "@/assets/service-desinfection.jpg";
+import serviceRenovation from "@/assets/service-renovation.jpg";
+import serviceResidential from "@/assets/service-residential.jpg";
 
-const categories = ["Tous", "Résidentiel", "Bureaux", "Après Travaux", "Vitres"];
+const categories = ["Tous", "Industriel", "Façades", "Après Chantier", "Hygiène"];
 
 const projects = [
-  { id: 1, cat: "Bureaux", title: "Bureaux PME Douala", desc: "Nettoyage complet bureaux 200m²" },
-  { id: 2, cat: "Résidentiel", title: "Villa Bastos Yaoundé", desc: "Nettoyage en profondeur villa 5 pièces" },
-  { id: 3, cat: "Après Travaux", title: "Immeuble rénové Douala", desc: "Remise en état après rénovation complète" },
-  { id: 4, cat: "Vitres", title: "Commerce Akwa", desc: "Nettoyage vitrine et baies vitrées" },
-  { id: 5, cat: "Bureaux", title: "Cabinet médical", desc: "Désinfection et nettoyage quotidien" },
-  { id: 6, cat: "Résidentiel", title: "Appartement F4 Yaoundé", desc: "Nettoyage de printemps complet" },
-  { id: 7, cat: "Après Travaux", title: "Boutique Bonapriso", desc: "Finitions après aménagement" },
-  { id: 8, cat: "Vitres", title: "Immeuble de bureaux", desc: "Nettoyage façade vitrée 4 étages" },
-  { id: 9, cat: "Résidentiel", title: "Maison Bonamoussadi", desc: "Entretien hebdomadaire résidence" },
-  { id: 10, cat: "Bureaux", title: "Open space startup", desc: "Nettoyage et désinfection 150m²" },
-  { id: 11, cat: "Après Travaux", title: "Restaurant rénové", desc: "Nettoyage complet avant ouverture" },
-  { id: 12, cat: "Vitres", title: "Centre commercial", desc: "Entretien mensuel vitrines" },
+  { id: 1, cat: "Façades", title: "Façade immeuble Douala", desc: "Nettoyage façade par techniciens cordistes", image: caarFacade },
+  { id: 2, cat: "Industriel", title: "Entretien bureaux", desc: "Nettoyage professionnel de bureaux", image: caarCleaning },
+  { id: 3, cat: "Après Chantier", title: "Immeuble rénové Douala", desc: "Remise en état après rénovation complète", image: serviceChantier },
+  { id: 4, cat: "Façades", title: "Vitres commerciales", desc: "Nettoyage vitrine et baies vitrées", image: caarVitres },
+  { id: 5, cat: "Hygiène", title: "Gestion déchets urbains", desc: "Ramassage et tri des déchets ménagers", image: caarEnvironment },
+  { id: 6, cat: "Industriel", title: "Nettoyage entrepôt", desc: "Nettoyage en profondeur 500m²", image: serviceIndustrial },
+  { id: 7, cat: "Après Chantier", title: "Boutique Bonapriso", desc: "Finitions après aménagement", image: serviceRenovation },
+  { id: 8, cat: "Hygiène", title: "Désinfection locaux", desc: "Désinfection complète bureaux", image: serviceDesinfection },
+  { id: 9, cat: "Industriel", title: "Nettoyage résidentiel", desc: "Entretien complet résidence", image: serviceResidential },
+  { id: 10, cat: "Façades", title: "Équipe en action", desc: "Nos techniciens sur le terrain", image: caarTeam },
+  { id: 11, cat: "Hygiène", title: "Collecte déchets", desc: "Service de collecte régulier", image: serviceHygiene },
+  { id: 12, cat: "Après Chantier", title: "Équipe CAAR", desc: "Intervention post-chantier", image: caarTeam2 },
 ];
 
-const emojis: Record<string, string> = {
-  "Résidentiel": "🏠",
-  "Bureaux": "🏢",
-  "Après Travaux": "🔨",
-  "Vitres": "🪟",
+const catIcons: Record<string, typeof Factory> = {
+  "Industriel": Factory,
+  "Façades": Building2,
+  "Après Chantier": HardHat,
+  "Hygiène": Trash2,
 };
 
 const Portfolio = () => {
@@ -65,18 +77,29 @@ const Portfolio = () => {
 
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {filtered.map((p) => (
-              <div key={p.id} className="card-service group cursor-pointer">
-                <div className="bg-muted rounded-lg aspect-[4/3] flex items-center justify-center mb-4">
-                  <span className="text-6xl opacity-60 group-hover:opacity-100 transition-opacity">
-                    {emojis[p.cat] || "✨"}
-                  </span>
+            {filtered.map((p) => {
+              const Icon = catIcons[p.cat] || Droplets;
+              return (
+                <div key={p.id} className="card-service group cursor-pointer overflow-hidden p-0">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Icon className="w-3.5 h-3.5 text-primary" />
+                      <span className="text-xs font-heading font-medium text-primary">{p.cat}</span>
+                    </div>
+                    <h3 className="font-heading font-bold text-sm mt-1">{p.title}</h3>
+                    <p className="text-xs text-muted-foreground mt-1">{p.desc}</p>
+                  </div>
                 </div>
-                <span className="text-xs font-heading font-medium text-primary">{p.cat}</span>
-                <h3 className="font-heading font-bold text-sm mt-1">{p.title}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{p.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
