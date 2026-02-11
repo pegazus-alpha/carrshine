@@ -1,6 +1,7 @@
 import { useState, FormEvent } from "react";
 import { Phone, MapPin, Clock, Facebook, ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+import FadeIn from "@/components/FadeIn";
 
 const serviceOptions = [
   "Nettoyage industriel",
@@ -123,10 +124,12 @@ const Contact = () => {
       {/* Hero */}
       <section className="bg-secondary text-secondary-foreground section-padding pt-28 md:pt-32">
         <div className="container-caar text-center">
-          <h1 className="section-title text-secondary-foreground mb-4">Demander un Devis</h1>
-          <p className="section-subtitle mx-auto text-muted-foreground">
-            Réponse sous 24h après inspection. Devis gratuit et sans engagement.
-          </p>
+          <FadeIn>
+            <h1 className="section-title text-secondary-foreground mb-4">Demander un Devis</h1>
+            <p className="section-subtitle mx-auto text-muted-foreground">
+              Réponse sous 24h après inspection. Devis gratuit et sans engagement.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -134,7 +137,7 @@ const Contact = () => {
         <div className="container-caar">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Form */}
-            <div className="lg:col-span-2">
+            <FadeIn className="lg:col-span-2">
               {/* Progress */}
               <div className="flex items-center gap-2 mb-8">
                 {[1, 2, 3, 4].map((s) => (
@@ -378,10 +381,10 @@ const Contact = () => {
                   )}
                 </div>
               </form>
-            </div>
+            </FadeIn>
 
             {/* Sidebar */}
-            <div className="space-y-6">
+            <FadeIn delay={0.2} className="space-y-6">
               <div className="card-service">
                 <h3 className="font-heading font-bold mb-4">Coordonnées</h3>
                 <ul className="space-y-4 text-sm">
@@ -433,7 +436,7 @@ const Contact = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
