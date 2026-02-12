@@ -111,8 +111,11 @@ const About = () => {
         <section className="section-padding bg-primary/90 text-primary-foreground text-center">
           <div className="container-caar">
             <h2 className="text-3xl font-heading font-bold mb-4">Zone d'Intervention</h2>
+            <p className="max-w-xl mx-auto opacity-90 mb-3">
+              Siège : Douala, New-Town Aéroport
+            </p>
             <p className="max-w-xl mx-auto opacity-90 mb-6">
-              Nous intervenons à Douala, Kribi, Yaoundé et dans les principales villes du Cameroun. Déplacements possibles selon les projets.
+              Nous intervenons à Kribi, Douala, Yaoundé et dans le reste du Cameroun. Déplacements possibles selon les projets.
             </p>
             <Link to="/contact" className="bg-secondary text-secondary-foreground font-heading font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:opacity-90 inline-flex items-center gap-2">
               Nous contacter <ArrowRight className="w-4 h-4" />

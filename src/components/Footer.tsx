@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, MapPin, Clock, Facebook } from "lucide-react";
+import { Phone, MapPin, Clock, Facebook, Mail } from "lucide-react";
 import logoCaar from "@/assets/logo-caar.png";
 
 const Footer = () => {
@@ -9,8 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1 - About */}
           <div>
-            <img src={logoCaar} alt="CAAR" className="h-10 mb-4 invert" />
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+            <img src={logoCaar} alt="CAAR" className="h-10 mb-4 brightness-0 invert" />
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4 font-medium">
               CAAR, votre expert en nettoyage et maintenance au Cameroun. Redonner vie à vos infrastructures.
             </p>
             <div className="flex gap-3">
@@ -35,8 +35,8 @@ const Footer = () => {
 
           {/* Col 2 - Services */}
           <div>
-            <h4 className="font-heading font-semibold text-sm mb-4 text-primary">Services</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="font-heading font-bold text-sm mb-4 text-primary">Services</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground font-medium">
               <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Industriel</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Après Chantier</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Façades</Link></li>
@@ -48,8 +48,8 @@ const Footer = () => {
 
           {/* Col 3 - Liens */}
           <div>
-            <h4 className="font-heading font-semibold text-sm mb-4 text-primary">Liens Utiles</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            <h4 className="font-heading font-bold text-sm mb-4 text-primary">Liens Utiles</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground font-medium">
               <li><Link to="/" className="hover:text-primary transition-colors">Accueil</Link></li>
               <li><Link to="/tarifs" className="hover:text-primary transition-colors">Nos Tarifs</Link></li>
               <li><Link to="/realisations" className="hover:text-primary transition-colors">Réalisations</Link></li>
@@ -59,15 +59,31 @@ const Footer = () => {
 
           {/* Col 4 - Contact */}
           <div>
-            <h4 className="font-heading font-semibold text-sm mb-4 text-primary">Contact</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
+            <h4 className="font-heading font-bold text-sm mb-4 text-primary">Contact</h4>
+            <ul className="space-y-3 text-sm text-muted-foreground font-medium">
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary" />
                 <a href="tel:+237657943097" className="hover:text-primary transition-colors">+237 6 57 94 30 97</a>
               </li>
               <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary" />
+                <a href="tel:+237681768944" className="hover:text-primary transition-colors">+237 681 768 944</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary" />
+                <a href="tel:+237678169959" className="hover:text-primary transition-colors">+237 678 169 959</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-primary" />
+                <a href="mailto:caaragency@gmail.com" className="hover:text-primary transition-colors">caaragency@gmail.com</a>
+              </li>
+              <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
-                Cameroun (Douala, Kribi, Yaoundé)
+                Douala, New-Town Aéroport
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-primary" />
+                Kribi · Yaoundé · Tout le Cameroun
               </li>
               <li className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-primary" />
@@ -80,7 +96,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="border-t border-border/20 py-5">
-        <p className="text-center text-xs text-muted-foreground">
+        <p className="text-center text-xs text-muted-foreground font-medium">
           © 2026 CAAR - Services de Nettoyage Professionnel au Cameroun | Tous droits réservés
         </p>
       </div>
