@@ -35,7 +35,7 @@ const Header = () => {
     >
       <div className="container-caar flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logoCaar} alt="CAAR Logo" className="h-10 md:h-12 w-auto brightness-0 invert" />
+          <img src={logoCaar} alt="CAAR Logo" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
