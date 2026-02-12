@@ -199,8 +199,9 @@ const Contact = () => {
                         >
                           <option value="">Sélectionner</option>
                           <option>Douala</option>
+                          <option>Kribi</option>
                           <option>Yaoundé</option>
-                          <option>Autre ville</option>
+                          <option>Autre ville du Cameroun</option>
                         </select>
                       </div>
                     </div>
@@ -406,7 +407,8 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 text-primary shrink-0" />
                     <div>
                       <p className="font-medium">Localisation</p>
-                      <p className="text-muted-foreground">Cameroun (Douala, Yaoundé)</p>
+                      <p className="text-muted-foreground">Douala, New-Town Aéroport</p>
+                      <p className="text-muted-foreground">Kribi · Yaoundé · Tout le Cameroun</p>
                     </div>
                   </li>
                   <li className="flex items-center gap-3">

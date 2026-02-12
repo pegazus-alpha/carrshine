@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Clock, Sparkles, Users, Star, CheckCircle, Factory, Home, HardHat, Building2, Droplets, Trash2 } from "lucide-react";
+import { ArrowRight, Shield, Clock, Sparkles, Users, CheckCircle, Factory, Home, HardHat, Building2, Droplets, Trash2 } from "lucide-react";
 import heroImage from "@/assets/hero-cleaning.jpg";
 import caarTeam from "@/assets/caar-team.jpg";
 import FadeIn from "@/components/FadeIn";
@@ -18,24 +18,6 @@ const strengths = [
   { icon: Sparkles, label: "Produits écologiques" },
   { icon: Clock, label: "Disponible 7j/7" },
   { icon: Shield, label: "Tarifs transparents" },
-];
-
-const testimonials = [
-  {
-    name: "Mme Sandrine K.",
-    role: "Directrice PME, Douala",
-    text: "CAAR assure le nettoyage de nos bureaux depuis 3 mois. Équipe ponctuelle, travail soigné. Je recommande vivement !",
-  },
-  {
-    name: "M. Patrick N.",
-    role: "Particulier, Yaoundé",
-    text: "Service impeccable ! Ma maison brille après chaque passage. Personnel professionnel et discret.",
-  },
-  {
-    name: "Société XYZ",
-    role: "Commerce, Douala",
-    text: "Après nos rénovations, CAAR a rendu nos locaux impeccables en un temps record. Excellent rapport qualité-prix.",
-  },
 ];
 
 const stats = [
@@ -170,7 +152,7 @@ const Index = () => {
         <div className="container-caar">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <FadeIn>
-              <img src={caarTeam} alt="Équipe CAAR" className="rounded-xl shadow-lg w-full object-cover aspect-[4/3]" loading="lazy" />
+              <img src={caarTeam} alt="Équipe CAAR" className="rounded-xl shadow-lg w-full object-cover aspect-[4/3] animate-float" loading="lazy" />
             </FadeIn>
             <FadeIn delay={0.15}>
               <div>
@@ -183,33 +165,6 @@ const Index = () => {
                 </Link>
               </div>
             </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section-padding bg-muted">
-        <div className="container-caar">
-          <FadeIn>
-            <div className="text-center mb-12">
-              <h2 className="section-title mb-3">Ce Que Disent Nos Clients</h2>
-            </div>
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <FadeIn key={t.name} delay={i * 0.1}>
-                <div className="card-service h-full">
-                  <div className="flex gap-1 mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <p className="text-sm text-muted-foreground italic mb-4">"{t.text}"</p>
-                  <p className="font-heading font-semibold text-sm">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </div>
-              </FadeIn>
-            ))}
           </div>
         </div>
       </section>
