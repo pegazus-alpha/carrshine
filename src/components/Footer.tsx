@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1 - About */}
           <div>
-            <img src={logoCaar} alt="CAAR" className="h-10 mb-4 brightness-0 invert" />
+            <img src={logoCaar} alt="CAAR" className="h-10 mb-4" />
             <p className="text-sm text-muted-foreground leading-relaxed mb-4 font-medium">
               CAAR, votre expert en nettoyage et maintenance au Cameroun. Redonner vie à vos infrastructures.
             </p>
