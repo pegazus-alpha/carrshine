@@ -36,13 +36,14 @@ const services = [
 ];
 
 const projectSteps = [
-  { icon: ClipboardCheck, title: "Validation de l'offre", desc: "Acceptation de notre proposition commerciale" },
-  { icon: Search, title: "Dépêchement d'un agent", desc: "Envoi d'un technicien spécialisé sur site" },
-  { icon: Ruler, title: "Analyse & dimensions", desc: "Évaluation des tâches, mesure des surfaces" },
-  { icon: AlertTriangle, title: "Évaluation des risques", desc: "Mise en place des mesures de sécurité" },
-  { icon: FileText, title: "Facturation / Devis", desc: "Établissement du devis détaillé" },
-  { icon: Handshake, title: "Mise en service", desc: "Démarrage des travaux dans un bref délai" },
-  { icon: ShieldCheck, title: "Vérification & conseil", desc: "Contrôle qualité après prestation" },
+  { icon: ClipboardCheck, title: "Validation de l'offre", desc: "Après acceptation de notre proposition commerciale" },
+  { icon: Search, title: "Dépêchement d'un agent", desc: "Envoi d'un technicien de surface ou spécialiste selon la demande" },
+  { icon: Ruler, title: "Analyse des tâches", desc: "Évaluation détaillée des travaux à réaliser" },
+  { icon: Ruler, title: "Prise de dimensions", desc: "Mesure des surfaces et calcul du nombre de zones à traiter" },
+  { icon: AlertTriangle, title: "Évaluation des risques", desc: "Identification des risques et mise en place des mesures de sécurité" },
+  { icon: FileText, title: "Facturation / Devis", desc: "Établissement des factures et devis détaillés" },
+  { icon: Handshake, title: "Mise en service", desc: "Conclusion et démarrage des travaux dans un bref délai" },
+  { icon: ShieldCheck, title: "Vérification & conseil", desc: "Contrôle qualité et conseils après prestation de service" },
 ];
 
 const Pricing = () => {
