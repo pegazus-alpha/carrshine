@@ -153,12 +153,22 @@
   }
 
   .animate-float {
-    animation: float 8s ease-in-out infinite;
+    animation: float 14s ease-in-out infinite;
+    transition: animation-duration 0.5s ease;
+  }
+
+  .animate-float:hover {
+    animation: float-hover 20s ease-in-out infinite;
   }
 
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-3px); }
+    50% { transform: translateY(-5px); }
+  }
+
+  @keyframes float-hover {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-18px); }
   }
 }
 
