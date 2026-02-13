@@ -39,7 +39,7 @@ const Index = () => {
           <FadeIn>
             <div className="max-w-2xl">
               <span className="inline-block bg-primary/90 text-primary-foreground text-xs font-heading font-bold px-3 py-1 rounded-full mb-6">
-                🎉 -20% sur votre première intervention
+                Nettoyage Professionnel au Cameroun
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-secondary-foreground leading-tight mb-6">
                 Redonner Vie à Vos <span className="text-primary">Infrastructures</span>
@@ -177,7 +177,7 @@ const Index = () => {
               Votre Espace Mérite le <span className="text-primary">Meilleur Nettoyage</span>
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Obtenez une estimation gratuite sous 24h après inspection et bénéficiez de -20% sur votre première intervention.
+              Obtenez une estimation gratuite sous 24h après inspection. Qualité et professionnalisme garantis.
             </p>
             <Link to="/contact" className="btn-primary text-lg">
               Obtenir mon devis gratuit <ArrowRight className="w-5 h-5" />

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, MapPin, Clock, Facebook, Mail } from "lucide-react";
+import { Phone, MapPin, Clock, Facebook, Mail, MessageCircle } from "lucide-react";
 import logoCaar from "@/assets/logo-caar.png";
 
 const Footer = () => {
@@ -37,12 +37,12 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-bold text-sm mb-4 text-primary">Services</h4>
             <ul className="space-y-2 text-sm text-muted-foreground font-medium">
-              <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Industriel</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Après Chantier</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">Nettoyage Façades</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">Hygiène & Salubrité</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">Rénovation & Expertise</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">Désinfection</Link></li>
+              <li><Link to="/services#industriel" className="hover:text-primary transition-colors">Nettoyage Industriel</Link></li>
+              <li><Link to="/services#apres-chantier" className="hover:text-primary transition-colors">Nettoyage Après Chantier</Link></li>
+              <li><Link to="/services#facades" className="hover:text-primary transition-colors">Nettoyage des Façades</Link></li>
+              <li><Link to="/services#hygiene" className="hover:text-primary transition-colors">Hygiène & Salubrité</Link></li>
+              <li><Link to="/services#renovation" className="hover:text-primary transition-colors">Rénovation & Contre-Expertise</Link></li>
+              <li><Link to="/services#desinfection" className="hover:text-primary transition-colors">Désinfection & Assainissement</Link></li>
             </ul>
           </div>
 
@@ -66,16 +66,12 @@ const Footer = () => {
                 <a href="tel:+237657943097" className="hover:text-primary transition-colors">+237 6 57 94 30 97</a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-primary" />
-                <a href="tel:+237681768944" className="hover:text-primary transition-colors">+237 681 768 944</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-primary" />
-                <a href="tel:+237678169959" className="hover:text-primary transition-colors">+237 678 169 959</a>
+                <MessageCircle className="w-4 h-4 text-primary" />
+                <a href="https://wa.me/237678169959" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">+237 678 169 959</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:caaragency@gmail.com" className="hover:text-primary transition-colors">caaragency@gmail.com</a>
+                <a href="mailto:info@caar.com" className="hover:text-primary transition-colors">info@caar.com</a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
